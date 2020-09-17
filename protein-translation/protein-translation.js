@@ -31,8 +31,10 @@ export const translate = (rna) => {
 
     if (protein === "STOP") {
       break;
-    } else {
+    } else if (protein) {
       proteins.push(protein);
+    } else {
+      throw Error("Invalid codon");
     }
   }
 
