@@ -15,4 +15,4 @@ export const colorCode = (color) => {
   return COLOR_MAP[color];
 };
 
-export const COLORS = Object.getOwnPropertyNames(COLOR_MAP);
+export const COLORS = Object.keys(COLOR_MAP);
