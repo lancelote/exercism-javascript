@@ -11,9 +11,10 @@ const COLORS = [
   "white",
 ]
 
-export const decodedValue = (colors) => {
-  let [firstColor, secondColor] = colors;
-  let firstColorIndex = COLORS.indexOf(firstColor);
-  let secondColorIndex = COLORS.indexOf(secondColor);
-  return Number(`${firstColorIndex}${secondColorIndex}`);
+const valueOf = (color) => {
+  return COLORS.indexOf(color);
+}
+
+export const decodedValue = ([firstColor, secondColor]) => {
+  return Number(`${valueOf(firstColor)}${valueOf(secondColor)}`);
 };
