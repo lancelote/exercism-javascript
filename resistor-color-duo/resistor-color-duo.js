@@ -11,7 +11,7 @@ const COLORS = [
   "white",
 ]
 
-const resistanceValue = (color) => COLORS.indexOf(color);
+const resistanceValue = color => COLORS.indexOf(color);
 
 export const decodedValue = ([firstColor, secondColor]) => {
   return resistanceValue(firstColor) * 10 + resistanceValue(secondColor);
