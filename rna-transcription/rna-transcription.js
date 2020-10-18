@@ -6,9 +6,5 @@ const DNA_TO_RNA = {
 }
 
 export const toRna = dna => {
-  let rna = [];
-  for (let nucleotide of dna) {
-    rna.push(DNA_TO_RNA[nucleotide]);
-  }
-  return rna.join("");
+  return dna.split("").map(nucleotide => DNA_TO_RNA[nucleotide]).join("")
 };
