@@ -1,4 +1,4 @@
-const ORBITAL_PERIOD = {
+const PLANET_ORBITAL_PERIOD_IN_EARTH_YEARS = {
   mercury: 0.2408467,
   venus: 0.61519726,
   earth: 1,
@@ -9,14 +9,15 @@ const ORBITAL_PERIOD = {
   neptune: 164.79132,
 };
 
-const SECONDS_IN_YEAR = 31_557_600;
+const SECONDS_IN_EARTH_YEAR = 31_557_600;
 
-const roundAtTwoDecimalPlaces = floatNumber => {
-  return Math.round(floatNumber * 100) / 100;
-}
+const round = (number, decimalPlaces = 2) => {
+  return Math.round(number * 10 ** decimalPlaces) / 10 ** decimalPlaces;
+};
 
 
-export const age = (planet, age) => {
-  let resultAge = age / (ORBITAL_PERIOD[planet] * SECONDS_IN_YEAR)
-  return roundAtTwoDecimalPlaces(resultAge);
+export const age = (planet, ageInSeconds) => {
+  let orbitalPeriodInEarthYears = PLANET_ORBITAL_PERIOD_IN_EARTH_YEARS[planet];
+  let secondsInPlanetYear = orbitalPeriodInEarthYears * SECONDS_IN_EARTH_YEAR;
+  return round(ageInSeconds / secondsInPlanetYear);
 };
