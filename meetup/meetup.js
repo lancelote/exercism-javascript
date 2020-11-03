@@ -1,6 +1,6 @@
 const getDaysInMonth = (year, month) => new Date(year, month, 0).getDate();
 
-const normalizeWeekday = weekday => {
+const weekdayToNumber = weekday => {
   let day;
 
   if (weekday === "Monday") {
@@ -25,12 +25,14 @@ const normalizeWeekday = weekday => {
 }
 
 const getFirstDay = (year, month, weekday) => {
-  let normWeekday = normalizeWeekday(weekday);
-  let firstMonthDay = new Date(year, month, 1);
-  // ToDo: finish implementation
-  return weekday + (7 - firstMonthDay) % 7;
-}
+  let targetWeekday = weekdayToNumber(weekday);
+  let firstMonthDate = new Date(year, month, 1);
+  let firstMonthDay = firstMonthDate.getDay();
 
+  return (targetWeekday - firstMonthDay + 7) % 7;
+  // ToDo: finish implementation
+}
+// 0 1 2 3 4 5 6 7 8 9
 // M T W T S S M T W T S S M T W T S S M T W T S S
 //   ^
 
