@@ -1,8 +1,8 @@
-const isAlphabetic = letter => /[a-zA-Z]/.test(letter);
+const ENGLISH_ALPHABET_LENGTH = 26;
 
 export const isPangram = sentence => {
   const uniqueLetters = new Set(
-    sentence.toLowerCase().split("").filter(isAlphabetic)
+    sentence.toLowerCase().match(/[a-z]/g)
   );
-  return uniqueLetters.size === 26;
+  return uniqueLetters.size === ENGLISH_ALPHABET_LENGTH;
 };
