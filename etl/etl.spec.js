@@ -1,40 +1,47 @@
-import { transform } from './etl';
+import { transform } from "./etl";
 
-describe('Transform', () => {
-  test('transforms one value', () => {
-    const old = { 1: ['A'] };
+describe("Transform", () => {
+  test("transforms one value", () => {
+    const old = { 1: ["A"] };
     const expected = { a: 1 };
 
     expect(transform(old)).toEqual(expected);
   });
 
-  test('transforms more values', () => {
-    const old = { 1: ['A', 'E', 'I', 'O', 'U'] };
+  test("transforms more values", () => {
+    const old = { 1: ["A", "E", "I", "O", "U"] };
     const expected = {
-      a: 1, e: 1, i: 1, o: 1, u: 1,
+      a: 1,
+      e: 1,
+      i: 1,
+      o: 1,
+      u: 1,
     };
 
     expect(transform(old)).toEqual(expected);
   });
 
-  test('transforms more keys', () => {
-    const old = { 1: ['A', 'E'], 2: ['D', 'G'] };
+  test("transforms more keys", () => {
+    const old = { 1: ["A", "E"], 2: ["D", "G"] };
     const expected = {
-      a: 1, e: 1, d: 2, g: 2,
+      a: 1,
+      e: 1,
+      d: 2,
+      g: 2,
     };
 
     expect(transform(old)).toEqual(expected);
   });
 
-  test('transforms a full dataset', () => {
+  test("transforms a full dataset", () => {
     const old = {
-      1: ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T'],
-      2: ['D', 'G'],
-      3: ['B', 'C', 'M', 'P'],
-      4: ['F', 'H', 'V', 'W', 'Y'],
-      5: ['K'],
-      8: ['J', 'X'],
-      10: ['Q', 'Z'],
+      1: ["A", "E", "I", "O", "U", "L", "N", "R", "S", "T"],
+      2: ["D", "G"],
+      3: ["B", "C", "M", "P"],
+      4: ["F", "H", "V", "W", "Y"],
+      5: ["K"],
+      8: ["J", "X"],
+      10: ["Q", "Z"],
     };
     const expected = {
       a: 1,

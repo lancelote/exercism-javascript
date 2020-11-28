@@ -5,7 +5,7 @@ export const abilityModifier = (ability) => {
     throw new RangeError("Ability scores can be at most 18");
   }
   return Math.floor((ability - 10) / 2);
-}
+};
 
 const randomInt = (min, max) => Math.floor(Math.random() * max - min) + min;
 

@@ -1,4 +1,4 @@
-const aliquotSum = number => {
+const aliquotSum = (number) => {
   if (number === 1) {
     return 0;
   }
@@ -10,21 +10,21 @@ const aliquotSum = number => {
     }
   }
   return sum;
-}
+};
 
-const isPerfect = number => {
+const isPerfect = (number) => {
   return aliquotSum(number) === number;
 };
 
-const isAbundant = number => {
+const isAbundant = (number) => {
   return aliquotSum(number) > number;
-}
+};
 
-const isDeficient = number => {
+const isDeficient = (number) => {
   return aliquotSum(number) < number;
-}
+};
 
-const classify = number => {
+const classify = (number) => {
   if (number <= 0) {
     throw new Error("Classification is only possible for natural numbers.");
   }
@@ -38,4 +38,4 @@ const classify = number => {
   }
 };
 
-module.exports = {aliquotSum, classify};
+module.exports = { aliquotSum, classify };

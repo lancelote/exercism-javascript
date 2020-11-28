@@ -1,8 +1,8 @@
-const getWords = sentence => {
+const getWords = (sentence) => {
   return sentence.toLowerCase().match(/\w+('\w+)?/g);
-}
+};
 
-export const countWords = sentence => {
+export const countWords = (sentence) => {
   const counter = {};
 
   for (const word of getWords(sentence)) {

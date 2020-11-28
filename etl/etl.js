@@ -1,4 +1,4 @@
-export const transform = scoreToLetters => {
+export const transform = (scoreToLetters) => {
   let letterToScore = {};
   for (const [score, letters] of Object.entries(scoreToLetters)) {
     for (const letter of letters) {

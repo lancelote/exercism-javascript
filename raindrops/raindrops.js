@@ -1,4 +1,4 @@
-export const convert = number => {
+export const convert = (number) => {
   let sounds = [];
 
   if (number % 3 === 0) {

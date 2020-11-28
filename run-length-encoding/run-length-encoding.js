@@ -8,7 +8,7 @@ export const encode = (message) => {
     if (group.length > 1) {
       result.push(group.length.toString());
     }
-    result.push(char)
+    result.push(char);
   }
 
   return result.join("");

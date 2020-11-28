@@ -1,5 +1,4 @@
-const formatNumber = number => number.toString().padStart(2, "0")
-
+const formatNumber = (number) => number.toString().padStart(2, "0");
 
 export class Clock {
   constructor(hour, minutes = 0) {

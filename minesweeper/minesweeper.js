@@ -11,12 +11,21 @@ const countMines = (i, j, field) => {
   let left = j > 0 ? field[i][j - 1] : " ";
   let topLeft = i > 0 && j > 0 ? field[i - 1][j - 1] : " ";
 
-  let around = [top, topRight, right, bottomRight, bottom, bottomLeft, left, topLeft];
-  let mines = around.filter(x => x === "*").length
+  let around = [
+    top,
+    topRight,
+    right,
+    bottomRight,
+    bottom,
+    bottomLeft,
+    left,
+    topLeft,
+  ];
+  let mines = around.filter((x) => x === "*").length;
   return mines !== 0 ? mines.toString() : " ";
-}
+};
 
-export const annotate = (input) =>  {
+export const annotate = (input) => {
   let result = [];
 
   for (let i = 0; i < input.length; i++) {
@@ -31,4 +40,4 @@ export const annotate = (input) =>  {
     result.push(row.join(""));
   }
   return result;
-}
+};

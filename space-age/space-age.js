@@ -17,10 +17,8 @@ const round = (number, decimalPlaces = 2) => {
   return Math.round((number + epsilon) * base) / base;
 };
 
-
 export const age = (planet, ageSeconds) => {
-  const planetYearSeconds = (
-    PLANET_ORBITAL_PERIOD_EARTH_YEARS[planet] * EARTH_YEAR_SECONDS
-  );
+  const planetYearSeconds =
+    PLANET_ORBITAL_PERIOD_EARTH_YEARS[planet] * EARTH_YEAR_SECONDS;
   return round(ageSeconds / planetYearSeconds);
 };

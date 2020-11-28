@@ -8,9 +8,7 @@ export class Matrix {
   }
 
   get rows() {
-    return this.stringRows.map((stringRow) => {
-      return stringRow.split(" ").map(Number);
-    });
+    return this.stringRows.map((stringRow) => stringRow.split(" ").map(Number));
   }
 
   get columns() {
