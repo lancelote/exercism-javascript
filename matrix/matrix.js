@@ -8,15 +8,15 @@ export class Matrix {
   }
 
   get rows() {
-    return this.stringRows.map(stringRow => {
-      return stringRow.split(" ").map(item => Number(item));
+    return this.stringRows.map((stringRow) => {
+      return stringRow.split(" ").map(Number);
     });
   }
 
   get columns() {
     let cols = [];
     for (let i = 0; i < this.rowLength; i++) {
-      cols.push(this.rows.map(row => row[i]));
+      cols.push(this.rows.map((row) => row[i]));
     }
     return cols;
   }
