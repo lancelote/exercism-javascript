@@ -1,21 +1,21 @@
 export class Matrix {
   constructor(string) {
-    this.stringRows = string.split("\n");
-  }
-
-  get rowLength() {
-    return this.rows[0].length;
+    this._rows = null;
+    this._columns = null;
+    this._stringRows = string.split("\n");
   }
 
   get rows() {
-    return this.stringRows.map((stringRow) => stringRow.split(" ").map(Number));
+    if (!this._rows) {
+      this._rows = this._stringRows.map((stringRow) => stringRow.split(" ").map(Number));
+    }
+    return this._rows;
   }
 
   get columns() {
-    let cols = [];
-    for (let i = 0; i < this.rowLength; i++) {
-      cols.push(this.rows.map((row) => row[i]));
+    if (!this._columns) {
+      this._columns = this.rows[0].map((_, i) => this.rows.map((row) => row[i]));
     }
-    return cols;
+    return this._columns
   }
 }
