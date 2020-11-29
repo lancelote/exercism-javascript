@@ -7,15 +7,19 @@ export class Matrix {
 
   get rows() {
     if (!this._rows) {
-      this._rows = this._stringRows.map((stringRow) => stringRow.split(" ").map(Number));
+      this._rows = this._stringRows.map((stringRow) =>
+        stringRow.split(" ").map(Number)
+      );
     }
     return this._rows;
   }
 
   get columns() {
     if (!this._columns) {
-      this._columns = this.rows[0].map((_, i) => this.rows.map((row) => row[i]));
+      this._columns = this.rows[0].map((_, i) =>
+        this.rows.map((row) => row[i])
+      );
     }
-    return this._columns
+    return this._columns;
   }
 }
