@@ -31,6 +31,7 @@
     "test": "jest --no-cache ./*",
     "watch": "jest --no-cache --watch ./*",
     "lint": "eslint .",
+    "format": "prettier --write .",
     "lint-test": "eslint . && jest --no-cache ./* "
   },
   "license": "MIT",
